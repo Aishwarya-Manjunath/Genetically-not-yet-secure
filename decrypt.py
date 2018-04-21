@@ -1,9 +1,7 @@
 class decrypt:
-	def __init__(self):
-		with open("enc_file", 'r') as myfile:
-			self.data = myfile.read()
-		with open("key", 'r') as myfile:
-			self.key = myfile.read()
+	def __init__(self,data,key):
+		self.data = data
+		self.key = key
 		self.bock_size = 8
 		self.key_list = []
 		self.data_list = []
@@ -15,14 +13,12 @@ class decrypt:
 		while(i < len(self.key)):
 			self.key_list.append(int(self.key[i:i+8],2))
 			i = i + 8
-		print(self.key_list)
 
 	def find_data(self):
 		i = 0
 		while(i < len(self.data)):
 			self.data_list.append('{0:08b}'.format(ord(self.data[i])))
 			i = i + 1
-		print(self.data_list)
 
 	def crossover(self,a,b,type_crossover):
 		if(type_crossover == 0):

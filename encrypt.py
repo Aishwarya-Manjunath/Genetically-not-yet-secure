@@ -40,8 +40,6 @@ class encrypt:
 				temp2 = temp2+'0'
 		return temp1,temp2
 	def save_file(self):
-		print(self.enc_list)
-		print(self.key_list)
 		enc_text = ''
 		for i in self.enc_list:
 			enc_text = enc_text + chr(int(bin(int(i,2)),2))
