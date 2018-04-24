@@ -8,6 +8,7 @@ class encrypt:
 		self.key_list = []
 		self.enc_list = []
 	def convert_to_binary(self):
+		#print(self.data,len(self.data))
 		for i in self.data:
 			self.l.append('{0:08b}'.format(ord(i)))
 	def obtain_prn(self):

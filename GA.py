@@ -7,5 +7,11 @@ with open(input(), 'r') as myfile:
 
 e = encrypt(data)
 e.start()
-d= decrypt()
+with open("enc_file", 'r') as myfile:
+	data = myfile.read()
+
+with open("key", 'r') as myfile:
+	key = myfile.read()
+
+d= decrypt(data , key)
 d.start()
