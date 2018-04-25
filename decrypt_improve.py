@@ -62,7 +62,7 @@ class decrypt:
 		self.find_data()
 		i = 0
 		c = 0
-		while(i < self.data_len):
+		while(i < self.data_len - 1):
 			a = self.data_list[i]
 			b = self.data_list[i+1]
 			i = i+2
