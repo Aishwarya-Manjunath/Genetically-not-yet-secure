@@ -1,6 +1,6 @@
 from tkinter import *
-from encrypt import *
-from decrypt import *
+from encrypt_improve_position import *
+from decrypt_improve_position import *
 import os
 
 
@@ -32,8 +32,7 @@ def call_encrypt():
 	label = Label(new_app1,text = "").grid()
 	label = Label(new_app1,text = "Find Encrytped file in: ").grid()
 	label = Label(new_app1,text= os.path.dirname(os.path.abspath(__file__))+"/enc_file").grid()
-	label = Label(new_app1,text = "Find Key in: ").grid()
-	label = Label(new_app1,text= os.path.dirname(os.path.abspath(__file__))+"/key").grid()
+	
 	
 	
 def call_decrypt():

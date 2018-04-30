@@ -6,21 +6,17 @@ class decrypt:
 		self.key_list = []
 		self.data_list = []
 		self.dec_list = []
-		self.data_len = 0
+			
 
 	def find_key(self):
 		i = 0
 		while(i < len(self.key)):
 			self.key_list.append(int(self.key[i:i+8],2))
 			i = i + 8
-		if (len(self.key_list) == 128) and self.key_list[127]%2 == 1:	#there was less data than 256 characters
-			self.data_len = self.key_list[126]
 
 	def find_data(self):
 		i = 0
-		if self.data_len == 0:
-			self.data_len = len(self.data)
-		while(i < self.data_len):
+		while(i < len(self.data)):
 			self.data_list.append('{0:08b}'.format(ord(self.data[i])))
 			i = i + 1
 
@@ -54,15 +50,14 @@ class decrypt:
 		dec_text = ''
 		for i in self.dec_list:
 			dec_text = dec_text + chr(int(bin(int(i,2)),2))
-		f = open("dec_file","w")
-		f.write(dec_text)
+		print(dec_text)
 		
 	def start(self):
 		self.find_key()
 		self.find_data()
 		i = 0
 		c = 0
-		while(i < self.data_len - 1):
+		while(i < len(self.data) - 1):
 			a = self.data_list[i]
 			b = self.data_list[i+1]
 			i = i+2

@@ -1,4 +1,6 @@
 import random
+#key length = 128 bytes
+#last 8 bits to represent purity or not 
 #import secrets
 class encrypt:
 	def __init__(self,data):
@@ -7,10 +9,16 @@ class encrypt:
 		self.l = []
 		self.key_list = []
 		self.enc_list = []
+		self.extra = 0
 	def convert_to_binary(self):
 		#print(self.data,len(self.data))
 		for i in self.data:
 			self.l.append('{0:08b}'.format(ord(i)))
+		if(len(self.data)<256):
+			self.extra = 256 - len(self.data) 
+		if(self.extra != 0):
+			for i in range(self.extra):
+				self.l.append('{0:08b}'.format(self.obtain_prn()))
 	def obtain_prn(self):
 		'''
 		num = secrets.randbelow(length)
@@ -48,6 +56,8 @@ class encrypt:
 		f.write(enc_text)
 		key_text = ''
 		f.close()
+		#print("data len :",len(self.enc_list))
+		#print("key len :",len(self.key_list))
 		for i in self.key_list:
 			key_text = key_text + '{0:08b}'.format(i)
 		f = open("key","w")
@@ -58,15 +68,23 @@ class encrypt:
 		i = 0
 		while(i<len(self.l)-1):
 			a = self.l[i]
-			b = self.l[i+1]
-			i = i + 2
+			b = self.l[i+1]				
 			rand_no = self.obtain_prn()
+			if(i+2 == len(self.l)):
+				if(self.extra != 0):
+					rand_no |= 1
+				elif(len(self.data)==256):
+					rand_no &= 254
+			if(i+4 == len(self.l)):
+				if(self.extra != 0):
+					rand_no = len(self.data)
 			self.key_list.append(rand_no)
 			type_crossover = rand_no % 3
 			crsv_a,crsv_b = self.crossover(a,b,type_crossover)
 			mut_a,mut_b = self.mutate(crsv_a,crsv_b)
 			self.enc_list.append(mut_a)
 			self.enc_list.append(mut_b)
+			i = i + 2
 		self.save_file()
 		
 		

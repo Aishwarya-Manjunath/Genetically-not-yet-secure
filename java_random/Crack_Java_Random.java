@@ -1,7 +1,7 @@
 import java.util.*;
 import java.lang.Long.*;
 import java.math.BigInteger;
-class guess{  
+class Crack_Java_Random{  
 	private static long multiplier = 0x5DEECE66DL;
 	private static long addend = 0xBL;
 	private static long mask = (1L << 48) - 1;

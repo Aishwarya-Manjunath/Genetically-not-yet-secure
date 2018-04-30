@@ -128,3 +128,4 @@ void docommand()  /* does not return, under any circumstances */
      * have it open, and so tr itself would not get eof!  Try it!
      */
 }
+
