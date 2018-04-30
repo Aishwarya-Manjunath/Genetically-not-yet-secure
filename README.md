@@ -1,6 +1,6 @@
 # Genetically not yet Secure
 This project was done as a part of the Computer network Security course.</n>
-We have explored how Psuedo random Numbers can be easily predicted, and how we can increase the randomness of these numbers can be increased by applying concepts from the Genetic algorithm such as crossover and mutation. We have also looked into how crossover and mutation can also be applied for Symmetric Encryption and some attacks which can be done on the same.</n></n>
+We have explored how Psuedo random Numbers can be easily predicted, and how we can increase the randomness of these numbers by applying concepts from the Genetic algorithm such as crossover and mutation. We have also looked into how crossover and mutation can also be applied for Symmetric Encryption and some attacks which can be done on the same.</n></n>
 
 
 <b><n>Cracking Javas Random Library</b></n>
@@ -22,7 +22,7 @@ Brute force attack can be prevented for smaller inputs by increasing the length 
 
 To prevent known input attacks, the position of the actual encrypted data can be varied. This is present in the folder improve_position.</n>
 
-More developments can be done on this algorithm in order to make it crypto secure as well as reduce the key size. 
+More developments can be done on this algorithm in order to make it crypto secure and importantly reduce the key size. 
 
 To run the code for implementation of the Genetic Algorithm:</n>
 
