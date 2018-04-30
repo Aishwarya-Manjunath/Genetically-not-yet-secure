@@ -32,3 +32,7 @@ python3 gui.py</n>
 To run the code for attacks:</n>
 
 python3 GA.py</n>
+
+<b> Project Done by : </b></n>
+
+Anusha Kamath , Akanksha G , Aishwarya Manjunath
