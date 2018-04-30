@@ -22,9 +22,13 @@ Brute force attack can be prevented for smaller inputs by increasing the length 
 
 To prevent known input attacks, the position of the actual encrypted data can be varied. This is present in the folder improve_position.</n>
 
+More developments can be done on this algorithm in order to make it crypto secure as well as reduce the key size. 
+
 To run the code for implementation of the Genetic Algorithm:</n>
+
 python3 gui.py</n>
 
 
 To run the code for attacks:</n>
+
 python3 GA.py</n>
