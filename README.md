@@ -5,7 +5,7 @@ We have explored how Psuedo random Numbers can be easily predicted, and how we c
 
 <b><n>Cracking Javas Random Library</b></n>
 
-Present in the folder java_random. This includes how, given two numbers from Javas Random library it is easy to predict the following numbers. 
+Present in the folder java_random. This includes how, given two numbers from Javas Random library it is easy to predict the following numbers. Javas Random library implements the Linear congruential generator.
 
 The folder stattest_prng contains the code for applying crossover and mutation to the numbers obtained from the Linear Congruential Generator. It also contains some statistical tests which have been performed on the same. </n></n>
 
